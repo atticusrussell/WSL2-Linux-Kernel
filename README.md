@@ -4,9 +4,9 @@ I followed instructions from [this issue][xpad-issue], and then followed the end
 # Final steps 
 In order to make the gamepad be recognized, in addition to passing through the device to wsl2 using usbipd, I also had to follow [these steps][permissions]:
 >
-`sudo chmod 777 /dir/input/event0`
+`sudo chmod 777 /dev/input/event0`
 >
-`sudo chmod 777 /dir/input/js0`
+`sudo chmod 777 /dev/input/js0`
 
 
 
