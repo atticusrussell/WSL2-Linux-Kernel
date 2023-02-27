@@ -1,3 +1,15 @@
+# Modifications
+Ihis is a fork of the main WSL2 kernel that has been modified in order to use a USB gamepad controller.
+I followed instructions from [this issue][xpad-issue], and then followed the end of [this tutorial][tutorial] to configure windows to use the new kernel for WSL2. 
+# Final steps 
+In order to make the gamepad be recognized, in addition to passing through the device to wsl2 using usbipd, I also had to follow [these steps][permissions]:
+>
+`sudo chmod 777 /dir/input/event0`
+>
+`sudo chmod 777 /dir/input/js0`
+
+
+
 # Introduction
 
 The [WSL2-Linux-Kernel][wsl2-kernel] repo contains the kernel source code and
@@ -37,6 +49,9 @@ as follows:
 Please see the documentation on the [.wslconfig configuration
 file][install-inst] for information on using a custom built kernel.
 
+[permissions]:  https://github.com/microsoft/WSL/issues/7747#issuecomment-1352418916
+[xpad-issue]:   https://github.com/microsoft/WSL/issues/7747
+[tutorial]: https://microhobby.com.br/blog/2019/09/21/compiling-your-own-linux-kernel-for-windows-wsl2
 [wsl2-kernel]:  https://github.com/microsoft/WSL2-Linux-Kernel
 [about-wsl2]:   https://docs.microsoft.com/en-us/windows/wsl/about#what-is-wsl-2
 [wsl-issue]:    https://github.com/microsoft/WSL/issues/new/choose
