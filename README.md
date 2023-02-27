@@ -22,7 +22,7 @@ In order to make the gamepad be recognized, in addition to passing through the d
 <br />`sudo chmod 777 /dev/input/js0`
 
 ## Notes
-when running `jstest-gtk` to test out the controller, I have found issues with the mappings of old XBOX controllers, such as a MadCatz. I have found the right thumbstick mapping to conflict with the right trigger, the horizontal axis of which is unresponsive. There is a program called `xboxdrv` that I am investigating and will update this README if I resolve. I don't think it's a function of WSL, as I've had this issue on normally installed Ubuntu on a different machine.
+when running `jstest-gtk` to test out the controller, I have found issues with the mappings of old XBOX controllers, such as a MadCatz. I have found the horizontal axis of the right thumbstick to not work, and to be mapped to the left trigger. There is a program called `xboxdrv` that I am investigating and will update this README if I resolve. I don't think it's a function of WSL, as I've had this issue on normally installed Ubuntu on a different machine.
 
 ## Last notes
 This particular repo's version of the WSL2 kernel may become out of date, but these instructions should still apply to future kernels. 
