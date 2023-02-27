@@ -16,10 +16,13 @@ I followed instructions from [this issue][xpad-issue]:
 <br /> wait a few seconds, and then boot up WSL2 `ubuntu`
 <br /> you can check to see what kernel you are running in bash using `uname -r` or something more extra like neofetch
 
-# Final steps 
+## Final steps 
 In order to make the gamepad be recognized, in addition to passing through the device to wsl2 using [usbipd][usbipd-instr], I also had to follow [these steps][permissions] to change the device permissions:
 <br />`sudo chmod 777 /dev/input/event0`
 <br />`sudo chmod 777 /dev/input/js0`
+
+## Notes
+when running `jstest-gtk` to test out the controller, I have found issues with the mappings of old XBOX controllers, such as a MadCatz. I have found the right thumbstick mapping to conflict with the right trigger, the horizontal axis of which is unresponsive. There is a program called `xboxdrv` that I am investigating and will update this README if I resolve. I don't think it's a function of WSL, as I've had this issue on normally installed Ubuntu on a different machine.
 
 ## Last notes
 This particular repo's version of the WSL2 kernel may become out of date, but these instructions should still apply to future kernels. 
