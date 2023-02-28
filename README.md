@@ -18,11 +18,10 @@ I followed instructions from [this issue][xpad-issue]:
 
 ## Final steps 
 In order to make the gamepad be recognized, in addition to passing through the device to wsl2 using [usbipd][usbipd-instr], I also had to follow [these steps][permissions] to change the device permissions:
-<br />`sudo chmod 777 /dev/input/event0`
-<br />`sudo chmod 777 /dev/input/js0`
+<br />`sudo chmod 666 /dev/input/js0`
 
 ## Notes
-when running `jstest-gtk` to test out the controller, I have found issues with the mappings of old XBOX controllers, such as a MadCatz. I have found the horizontal axis of the right thumbstick to not work, and to be mapped to the left trigger. There is a program called `xboxdrv` that I am investigating and will update this README if I resolve. I don't think it's a function of WSL, as I've had this issue on normally installed Ubuntu on a different machine.
+when running `jstest-gtk` to test out the controller, I have found issues with the mappings of old XBOX controllers, such as a MadCatz. I have found the horizontal axis of the right thumbstick to not work, and to be mapped to the left trigger. I've had this issue on normally installed Ubuntu on a different machine, so I configured jscal and permissions to be changed automatically with udev rules from [my repo here][my-repo].
 
 ## Last notes
 This particular repo's version of the WSL2 kernel may become out of date, but these instructions should still apply to future kernels. 
@@ -67,6 +66,7 @@ as follows:
 Please see the documentation on the [.wslconfig configuration
 file][install-inst] for information on using a custom built kernel.
 
+[my-repo]:      https://github.com/atticusrussell/ubuntu-xbox-gamepad-cal
 [usbipd-instr]: https://learn.microsoft.com/en-us/windows/wsl/connect-usb
 [permissions]:  https://github.com/microsoft/WSL/issues/7747#issuecomment-1352418916
 [xpad-issue]:   https://github.com/microsoft/WSL/issues/7747
